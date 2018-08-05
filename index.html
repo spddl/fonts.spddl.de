@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#9fd55b">
+    <meta name="apple-mobile-web-app-title" content="fonts.spddl.de">
+    <meta name="application-name" content="fonts.spddl.de">
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#212121">
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
+
+  </head>
+  <body ng-app="App" ng-controller="Ctrl">
+    <div class="m-app-loading" ng-animate-children> <style type="text/css">div.m-app-loading{position:fixed}div.m-app-loading div.animated-container{background-color:#FFF;bottom:0;left:0;opacity:1;position:fixed;right:0;top:0;z-index:999999}div.m-app-loading div.animated-container.ng-leave{opacity:.9;transition:all linear .2s;-webkit-transition:all linear .2s}div.m-app-loading div.animated-container.ng-leave-active{opacity:0}div.m-app-loading div.messaging{color:#FFF;font-family:monospace;left:0;margin-top:-37px;position:absolute;right:0;text-align:center;top:50%}.progress{position:relative;height:4px;display:block;width:100%;background-color:#acece6;border-radius:2px;background-clip:padding-box;margin:.5rem 0 1rem;overflow:hidden}.progress .indeterminate{background-color:#26a69a}.progress .indeterminate:after,.progress .indeterminate:before{content:'';position:absolute;background-color:inherit;top:0;left:0;bottom:0;will-change:left,right}.progress .indeterminate:before{-webkit-animation:indeterminate 2.1s cubic-bezier(.65,.815,.735,.395) infinite;animation:indeterminate 2.1s cubic-bezier(.65,.815,.735,.395) infinite}.progress .indeterminate:after{-webkit-animation:indeterminate-short 2.1s cubic-bezier(.165,.84,.44,1) infinite;animation:indeterminate-short 2.1s cubic-bezier(.165,.84,.44,1) infinite;-webkit-animation-delay:1.15s;animation-delay:1.15s}@-webkit-keyframes indeterminate{0%{left:-35%;right:100%}100%,60%{left:100%;right:-90%}}@keyframes indeterminate{0%{left:-35%;right:100%}100%,60%{left:100%;right:-90%}}@-webkit-keyframes indeterminate-short{0%{left:-200%;right:100%}100%,60%{left:107%;right:-8%}}@keyframes indeterminate-short{0%{left:-200%;right:100%}100%,60%{left:107%;right:-8%}}</style> <div class="animated-container"> <div class="messaging"> <div class="progress"> <div class="indeterminate"></div></div></div></div></div>
+
+    <nav ng-cloak>
+      <div class="nav-wrapper grey darken-4">
+        <a class="card-title grey-text text-lighten-2">The only limit is your own imagination.</a>
+        <a class="brand-logo center"><img width="75" style="vertical-align: middle;" src="/css/spddlLogo.gif" alt="logo"></a>
+      </div>
+    </nav>
+
+   <div class="container">
+      <p class="flow-text">Welcome on this site I'd like to offer you a possibility to change the font for Counter-Strike: Global Offensive. However, I have to add that it isn't possible to change font size or text positions.</p>
+      <p class="flow-text">Install: Just unzip the contents of the ZIP directly into your Program Files directory. (Usually "C:\Program Files\ or C:\Program Files (x86)")</p>
+      <p class="flow-text">For uninstall use: <a href="steam://validate/730">steam://validate/730</a></p>
+      <p class="flow-text">(experienced users may just have a look into the file "fontmapping.cfg")</p>
+      <p class="flow-text">Each download not coming from this site could have been modified using a virus or other unwanted modifications wich could result in a VAC ban.</p>
+      <p class="flow-text">My very own scripts never lead into a VAC ban, so be careful where you download from!</p>
+      <br>
+
+      <div class="row">
+        <div class="input-field col s12 ng-cloak">
+          <input ng-model="search" placeholder="Font Name" id="search" type="text">
+          <label for="search">Found {{(items | filter:search).length}} of {{items.length}}</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s8">
+              <select ng-model="predicate" id="option">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="+name">Alphabetical</option>
+                <option value="-upload">Newest</option>
+              </select>
+              <label for="option">Sort by</label>
+            </div>
+
+            <div class="input-field col s4">
+              <p>
+                <input type="checkbox" ng-model="reverse" value="false" id="reverse" />
+                <label for="reverse">reverse</label>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row ng-cloak">
+         <div class="col s12 m12 l6" ng-repeat="item in items | filter:search | orderBy:predicate:reverse"> <!-- <div class="col s12 m12 l6" ng-repeat="item in items | filter:search | orderBy:'name':reverse | orderBy:orderProp"> --> <!-- <div class="col s12 m6 l4" ng-repeat="item in items"> -->
+           <div class="card hoverable">
+             <div class="card-image waves-effect waves-block waves-light">
+               <img lazy-src="//raw.github.com/spddl/fonts.spddl.de/master/thumbnails/_{{ item.name }}.jpg" alt="{{ item.name }}">
+             </div>
+             <div class="card-content">
+               <p class="flow-text">{{ item.name }}</p>
+                upload: {{item.upload | date:'yyyy-MM-dd'}}
+             </div>
+             <div class="card-action waves-effect">
+               <a ng-href="downloads/{{ item.name }}.zip" target="_parent">Download</a>
+             </div>
+             <div class="card-action waves-effect">
+               <a ng-href="{{ item.imgur }}" target="_blank">more examples</a>
+             </div>
+           </div>
+         </div>
+      </div>
+    </div>
+
+    <!-- share btn -->
+    <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
+      <a class="btn-floating btn-large red">
+        <i class="material-icons">share</i>
+      </a>
+      <ul>
+        <li><a href="//vk.com/share.php?url=http%3A%2F%2Ffonts.spddl.de" class="btn-floating blue darken-2 btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="vk.com"><i>VK</i></a></li>
+        <li><a href="//reddit.com/r/GlobalOffensive/submit?resubmit=true&url=http%3A%2F%2Ffonts.spddl.de" class="btn-floating orange btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="reddit.com"><i>Re</i></a></li>
+        <li><a href="//www.facebook.com/sharer.php?u=http%3A%2F%2Ffonts.spddl.de" class="btn-floating blue darken-3 btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="facebook.com"><i>fb</i></a></li>
+        <li><a href="//twitter.com/intent/tweet?url=http://fonts.spddl.de" class="btn-floating blue lighten-2 btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="twitter.com"><i>Tw</i></a></li>
+        <li><a href="whatsapp://send?text=http://fonts.spddl.de" class="btn-floating green accent-4 btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Whatsapp"><i>WA</i></a></li>
+      </ul>
+    </div>
+  <footer class="page-footer grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <a href="//docs.google.com/forms/d/12471eaCKwXywb3zFGnwfP9i16KFISElKiUFm-bKGNo8/viewform?usp=send_form" target="_blank" class="waves-effect waves-light btn blue-grey darken-4" style="width: 254px;" ><i class="material-icons left">playlist_add</i>fonts suggestions</a><br>
+          <a href="//docs.google.com/spreadsheets/d/1UP7PveWw0Y6lVpJuHC9hEQ9u4_OI8BfJmbZefsGmopU" target="_blank" class="waves-effect waves-light btn blue-grey darken-4" style="width: 254px;"><i class="material-icons left">list</i>processing status</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        <!-- hosted by <a class="orange-text text-accent-2" href="http://trotakis.eu">trotakis.eu</a> -->
+      </div>
+    </div>
+  </footer>
+
+  <!--Import Google Icon Font-->
+  <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css"  media="screen,projection"/>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script type="text/javascript" src="js/me-lazyload.min.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
